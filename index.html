@@ -39,7 +39,7 @@
         /* Header & Navigation */
         header {
             width: 100%;
-            padding: 15px 20px;
+            padding: 12px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -49,11 +49,14 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             font-family: 'Cinzel', serif;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .logo .qb {
@@ -66,44 +69,45 @@
             text-shadow: 0 0 10px rgba(147, 112, 219, 0.5);
         }
 
-        /* Main Container */
+        /* Main Container - Reduced height */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 10px 20px;
+            padding: 5px 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: calc(100vh - 80px);
         }
 
-        /* Hero Section */
+        /* Hero Section - More compact */
         .hero-section {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 10px 0 20px;
+            margin: 5px 0 10px;
             text-align: center;
         }
 
-        /* Profile Display */
+        /* Profile Display - Smaller */
         .profile-display {
             position: relative;
-            width: 280px;
-            height: 280px;
-            margin: 10px 0 20px;
+            width: 240px;
+            height: 240px;
+            margin: 5px 0 10px;
         }
 
         .main-circle {
-            width: 200px;
-            height: 200px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             overflow: hidden;
             position: absolute;
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            border: 4px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
             z-index: 2;
         }
 
@@ -114,15 +118,15 @@
         }
 
         .video-circle {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             overflow: hidden;
             position: absolute;
-            bottom: 20px;
-            right: 30px;
-            border: 3px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            bottom: 15px;
+            right: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
             z-index: 3;
         }
 
@@ -132,17 +136,16 @@
             object-fit: cover;
         }
 
-        /* Luxury Text */
+        /* Luxury Text - Smaller */
         .luxury-text {
             font-family: 'Cinzel', serif;
-            font-size: 2.8rem;
+            font-size: 1.8rem;
             font-weight: 900;
             color: rgba(255, 255, 255, 0.9);
-            text-shadow: 0 0 20px rgba(147, 112, 219, 0.7),
-                         0 0 40px rgba(147, 112, 219, 0.4),
-                         0 0 60px rgba(192, 192, 192, 0.2);
-            letter-spacing: 3px;
-            margin: 15px 0;
+            text-shadow: 0 0 10px rgba(147, 112, 219, 0.7),
+                         0 0 20px rgba(147, 112, 219, 0.4);
+            letter-spacing: 1px;
+            margin: 5px 0;
             text-transform: uppercase;
             background: linear-gradient(90deg, 
                 rgba(255,255,255,0.9) 0%, 
@@ -153,61 +156,51 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: shimmer 3s ease-in-out infinite alternate;
         }
 
-        @keyframes shimmer {
-            0% {
-                background-position: -200px 0;
-            }
-            100% {
-                background-position: 200px 0;
-            }
-        }
-
-        /* Cards Section */
+        /* Cards Section - Much more compact */
         .cards-section {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
-            margin: 20px 0;
+            gap: 10px;
+            margin: 10px 0;
             width: 100%;
         }
 
-        /* Card Style */
+        /* Card Style - More compact */
         .card {
             position: relative;
             width: 300px;
-            height: 280px;
-            border-radius: 14px;
+            height: 200px;
+            border-radius: 12px;
             z-index: 1111;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.3),
-                        -20px -20px 60px rgba(255, 255, 255, 0.05);
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2),
+                        -10px -10px 30px rgba(255, 255, 255, 0.05);
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 15px;
+            backdrop-filter: blur(8px);
+            padding: 10px;
             text-align: center;
             opacity: 0.4;
         }
 
         .card-bg {
             position: absolute;
-            top: 5px;
-            left: 5px;
-            width: calc(100% - 10px);
-            height: calc(100% - 10px);
+            top: 3px;
+            left: 3px;
+            width: calc(100% - 6px);
+            height: calc(100% - 6px);
             z-index: 2;
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(24px);
-            border-radius: 10px;
+            backdrop-filter: blur(20px);
+            border-radius: 8px;
             overflow: hidden;
-            outline: 2px solid white;
+            outline: 1px solid white;
         }
 
         .card-blob {
@@ -215,12 +208,12 @@
             z-index: 1;
             top: 50%;
             left: 50%;
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             background-color: rgba(8, 8, 8, 0.1);
             opacity: 1;
-            filter: blur(12px);
+            filter: blur(10px);
             animation: blob-bounce 5s infinite ease;
         }
 
@@ -246,15 +239,15 @@
             position: relative;
             z-index: 3;
             color: #333;
-            padding: 10px;
-            font-size: 0.95rem;
-            line-height: 1.5;
+            padding: 8px;
+            font-size: 0.85rem;
+            line-height: 1.4;
         }
 
         .card h3 {
             color: #222;
-            margin-bottom: 8px;
-            font-size: 1.3rem;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
             font-weight: 700;
             font-family: 'Playfair Display', serif;
         }
@@ -262,21 +255,22 @@
         .card ul {
             list-style-type: none;
             text-align: left;
-            margin-top: 8px;
+            margin-top: 5px;
         }
 
         .card li {
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             display: flex;
             align-items: center;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         .card li::before {
             content: "✦";
-            margin-right: 8px;
+            margin-right: 6px;
             color: #9370db;
             font-weight: bold;
+            font-size: 0.7rem;
         }
 
         /* Gradient Line */
@@ -284,28 +278,28 @@
             width: 100%;
             height: 1px;
             background: linear-gradient(to right, transparent, #9370db, transparent);
-            margin: 10px 0;
+            margin: 5px 0;
         }
 
         /* Services Card */
         .services-card {
-            width: 350px;
-            height: 280px;
+            width: 300px;
+            height: 200px;
             order: 3;
         }
 
-        /* Branding Card */
+        /* Branding Card - Smaller */
         .branding-card {
-            width: 320px;
-            height: 70px;
+            width: 280px;
+            height: 50px;
             background: rgba(223, 225, 235, 0.9);
             overflow: hidden;
-            border-radius: 20px;
-            box-shadow: inset 0px 56px 40px rgba(34, 34, 34, 0.2),
-                        inset 0px -56px 40px rgba(255, 255, 255, 0.8),
-                        1px 1px 2px rgba(255, 255, 255, 0.8),
+            border-radius: 15px;
+            box-shadow: inset 0px 30px 20px rgba(34, 34, 34, 0.1),
+                        inset 0px -30px 20px rgba(255, 255, 255, 0.8),
+                        1px 1px 2px rgba(255, 255, 255, 0.6),
                         -1px -1px 2px rgba(68, 68, 68, 0.2);
-            margin: 20px 0;
+            margin: 10px 0;
         }
 
         .branding-content {
@@ -323,10 +317,10 @@
             width: 33.33%;
             text-align: center;
             color: #333;
-            font-size: 1.6rem;
+            font-size: 1.2rem;
             font-weight: 600;
             font-family: 'Cinzel', serif;
-            text-shadow: 2px 2px 3px rgba(68, 68, 68, 0.3);
+            text-shadow: 1px 1px 2px rgba(68, 68, 68, 0.2);
         }
 
         @keyframes anim {
@@ -350,24 +344,24 @@
             }
         }
 
-        /* Buttons Container */
+        /* Buttons Container - More compact */
         .buttons-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
-            margin: 20px 0;
+            gap: 10px;
+            margin: 10px 0;
         }
 
-        /* Button Style */
+        /* Button Style - Smaller */
         .Btn-container {
             width: fit-content;
             height: fit-content;
             border: none;
             background-color: rgba(235, 235, 235, 0.9);
-            padding: 8px;
-            border-radius: 10px;
-            box-shadow: 0px 2px 5px rgba(225, 225, 225, 0.5);
+            padding: 6px;
+            border-radius: 8px;
+            box-shadow: 0px 1px 3px rgba(225, 225, 225, 0.5);
             transition: 0.2s;
             cursor: pointer;
         }
@@ -379,10 +373,10 @@
             align-items: center;
             justify-content: center;
             background-color: rgba(247, 247, 247, 0.95);
-            border-radius: 7px;
-            padding: 6px 12px;
-            box-shadow: 0px 4px 10px rgba(211, 211, 211, 0.5);
-            gap: 15px;
+            border-radius: 6px;
+            padding: 4px 8px;
+            box-shadow: 0px 2px 5px rgba(211, 211, 211, 0.5);
+            gap: 10px;
             transition: 0.5s;
         }
 
@@ -390,11 +384,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 4px;
         }
 
         .text p {
-            font-size: 1em;
+            font-size: 0.85rem;
             font-weight: 600;
             color: rgb(100, 100, 100);
         }
@@ -402,14 +396,14 @@
         .text .pro {
             background-color: black;
             color: white;
-            padding: 3px 6px;
-            border-radius: 5px;
-            font-size: 0.9em;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-size: 0.75rem;
         }
 
         .icon {
-            width: 35px;
-            height: 35px;
+            width: 28px;
+            height: 28px;
             background-color: white;
             border-radius: 50%;
             display: flex;
@@ -420,7 +414,7 @@
         }
 
         .icon svg {
-            width: 20px;
+            width: 16px;
         }
 
         .Btn-container:active {
@@ -435,7 +429,7 @@
             transform: rotate(0deg);
         }
 
-        /* Luxury Button */
+        /* Luxury Button - Smaller */
         .button-wrap {
             position: relative;
             z-index: 2;
@@ -443,39 +437,19 @@
             background: transparent;
             pointer-events: none;
             transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-            margin: 25px 0;
+            margin: 10px 0;
         }
 
         .button-shadow {
-            --shadow-cuttoff-fix: 2em;
+            --shadow-cuttoff-fix: 1.5em;
             position: absolute;
             width: calc(100% + var(--shadow-cuttoff-fix));
             height: calc(100% + var(--shadow-cuttoff-fix));
             top: calc(0% - var(--shadow-cuttoff-fix) / 2);
             left: calc(0% - var(--shadow-cuttoff-fix) / 2);
-            filter: blur(clamp(2px, 0.125em, 12px));
+            filter: blur(clamp(1px, 0.125em, 8px));
             overflow: visible;
             pointer-events: none;
-        }
-
-        .button-shadow::after {
-            content: "";
-            position: absolute;
-            z-index: 0;
-            inset: 0;
-            border-radius: 999vw;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
-            width: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
-            height: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
-            top: calc(var(--shadow-cuttoff-fix) - 0.5em);
-            left: calc(var(--shadow-cuttoff-fix) - 0.875em);
-            padding: 0.125em;
-            box-sizing: border-box;
-            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-            mask-composite: exclude;
-            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-            overflow: visible;
-            opacity: 1;
         }
 
         .luxury-btn {
@@ -511,13 +485,13 @@
             display: block;
             user-select: none;
             font-family: "Cinzel", serif;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             font-weight: 700;
-            font-size: 1em;
+            font-size: 0.85rem;
             color: rgba(50, 50, 50, 1);
             text-shadow: 0em 0.25em 0.05em rgba(0, 0, 0, 0.1);
             transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-            padding: 0.75em 1.25em;
+            padding: 0.5em 1em;
         }
 
         .luxury-btn:hover span {
@@ -539,20 +513,20 @@
         }
 
         .popup-card {
-            width: 360px;
+            width: 320px;
             max-width: 90%;
-            height: 180px;
+            height: 160px;
             background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            padding: 10px;
             backdrop-filter: blur(10px);
             z-index: 10000;
             animation: popupFadeIn 0.5s ease;
         }
 
         @keyframes popupFadeIn {
-            from { opacity: 0; transform: translateY(-30px); }
+            from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -573,8 +547,8 @@
 
         .icon-cart-box {
             background-color: rgba(26, 26, 26, 0.1);
-            width: 3.5em;
-            height: 3.5em;
+            width: 3em;
+            height: 3em;
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -583,7 +557,7 @@
 
         .card-content {
             width: 80%;
-            padding-left: 15px;
+            padding-left: 10px;
         }
 
         .card-title-wrapper {
@@ -591,12 +565,12 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .card-title {
             width: 80%;
-            font-size: 1.1em;
+            font-size: 0.95rem;
             font-weight: 600;
             color: #1b1b1b;
         }
@@ -617,47 +591,42 @@
         }
 
         .product-name {
-            font-size: 0.85em;
+            font-size: 0.75rem;
             color: #2c2c2c;
             margin-bottom: 5px;
         }
 
-        .product-name:hover {
-            cursor: pointer;
-            text-decoration: underline;
-        }
-
         .product-price {
-            font-size: 0.9em;
+            font-size: 0.8rem;
             font-weight: 600;
             color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .popup-button {
             position: relative;
             transition: all 0.3s ease-in-out;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-            padding: 0.5rem 1.25rem;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
+            padding: 0.4rem 1rem;
             background-color: rgb(5, 5, 5);
             border-radius: 9999px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             color: #ffff;
-            gap: 8px;
+            gap: 6px;
             font-weight: bold;
             border: 2px solid rgba(255, 255, 255, 0.3);
             outline: none;
             overflow: hidden;
-            font-size: 14px;
+            font-size: 12px;
             cursor: pointer;
-            height: 35px;
+            height: 30px;
         }
 
         .popup-icon {
-            width: 18px;
-            height: 18px;
+            width: 15px;
+            height: 15px;
             transition: all 0.3s ease-in-out;
         }
 
@@ -677,123 +646,217 @@
         .popup-button::before {
             content: "";
             position: absolute;
-            width: 100px;
+            width: 80px;
             height: 100%;
             background-image: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%);
             top: 0;
-            left: -100px;
+            left: -80px;
             opacity: 0.6;
         }
 
         @keyframes shine {
-            0% { left: -100px; }
+            0% { left: -80px; }
             60% { left: 100%; }
             to { left: 100%; }
         }
 
-        /* Footer */
+        /* Footer - Smaller */
         footer {
             text-align: center;
-            padding: 15px;
-            margin-top: 20px;
+            padding: 10px;
+            margin-top: 10px;
             color: rgba(255, 255, 255, 0.7);
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Responsive Design */
+        /* Warning Message */
+        .warning-message {
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            border-radius: 5px;
+            padding: 5px 8px;
+            margin: 5px 0;
+            font-size: 0.7rem;
+            text-align: center;
+        }
+
+        /* Mobile Optimizations */
         @media (max-width: 768px) {
+            .container {
+                padding: 5px 10px;
+                min-height: calc(100vh - 70px);
+            }
+            
+            header {
+                padding: 8px 12px;
+            }
+            
+            .logo {
+                font-size: 1.3rem;
+            }
+            
             .cards-section {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
+                gap: 8px;
+                margin: 8px 0;
             }
             
             .card {
-                width: 90%;
-                max-width: 350px;
-                height: 250px;
-                padding: 12px;
+                width: 95%;
+                max-width: 320px;
+                height: 180px;
+                padding: 8px;
             }
             
             .services-card {
-                width: 90%;
-                max-width: 350px;
-                height: 250px;
+                width: 95%;
+                max-width: 320px;
+                height: 180px;
             }
             
             .buttons-container {
                 flex-direction: column;
                 align-items: center;
-                gap: 10px;
-            }
-            
-            .luxury-text {
-                font-size: 2.2rem;
-                margin: 10px 0;
+                gap: 8px;
+                margin: 8px 0;
             }
             
             .profile-display {
-                width: 250px;
-                height: 250px;
-                margin: 5px 0 15px;
+                width: 200px;
+                height: 200px;
+                margin: 5px 0 8px;
             }
             
             .main-circle {
-                width: 180px;
-                height: 180px;
+                width: 140px;
+                height: 140px;
             }
             
             .video-circle {
-                width: 90px;
-                height: 90px;
+                width: 70px;
+                height: 70px;
+                bottom: 10px;
+                right: 15px;
             }
             
             .branding-card {
-                width: 90%;
-                height: 60px;
-                margin: 15px 0;
+                width: 95%;
+                max-width: 280px;
+                height: 45px;
+                margin: 8px 0;
             }
             
             .branding-word {
-                font-size: 1.4rem;
+                font-size: 1rem;
+            }
+            
+            .luxury-btn span {
+                font-size: 0.8rem;
+                padding: 0.4em 0.8em;
+            }
+            
+            .luxury-text {
+                font-size: 1.5rem;
+            }
+            
+            .popup-card {
+                width: 90%;
+                height: 150px;
+                padding: 8px;
             }
         }
 
         @media (max-width: 480px) {
             .logo {
-                font-size: 1.5rem;
+                font-size: 1.1rem;
             }
             
             .luxury-text {
-                font-size: 1.8rem;
-                letter-spacing: 2px;
+                font-size: 1.2rem;
+                letter-spacing: 0.5px;
             }
             
             .card {
-                width: 95%;
-                height: auto;
-                min-height: 240px;
+                width: 98%;
+                height: 160px;
+                padding: 6px;
+            }
+            
+            .card-content {
+                font-size: 0.75rem;
+                padding: 6px;
+            }
+            
+            .card h3 {
+                font-size: 1rem;
+                margin-bottom: 3px;
+            }
+            
+            .card li {
+                font-size: 0.7rem;
+                margin-bottom: 3px;
             }
             
             .branding-card {
-                width: 95%;
-                height: 55px;
+                width: 98%;
+                height: 40px;
             }
             
             .branding-word {
-                font-size: 1.2rem;
+                font-size: 0.9rem;
             }
             
-            .popup-card {
-                width: 95%;
-                height: auto;
-                padding: 15px;
+            .text p {
+                font-size: 0.75rem;
+            }
+            
+            .text .pro {
+                font-size: 0.65rem;
+            }
+            
+            .icon {
+                width: 24px;
+                height: 24px;
+            }
+            
+            .icon svg {
+                width: 14px;
+            }
+            
+            footer {
+                font-size: 0.65rem;
+                padding: 8px;
+            }
+            
+            .warning-message {
+                font-size: 0.65rem;
+                padding: 4px 6px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .profile-display {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .main-circle {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .video-circle {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .card {
+                height: 150px;
             }
             
             .luxury-btn span {
-                font-size: 0.9em;
-                padding: 0.6em 1em;
+                font-size: 0.7rem;
+                padding: 0.3em 0.6em;
             }
         }
     </style>
@@ -802,7 +865,8 @@
     <!-- Header -->
     <header>
         <div class="logo">
-            <span class="luxury-text">QB</span> <span class="luxury-text">Agency</span>
+            <span class="luxury-text">QB</span> 
+            <span class="luxury-text">Agency</span>
         </div>
         <div class="nav-placeholder"></div>
     </header>
@@ -811,9 +875,6 @@
     <div class="container">
         <!-- Hero Section -->
         <section class="hero-section">
-            <!-- Luxury Text Top -->
-          
-            
             <!-- Profile Display -->
             <div class="profile-display">
                 <div class="main-circle">
@@ -826,7 +887,10 @@
                     </video>
                 </div>
             </div>
-            
+
+            <!-- Luxury Text -->
+            <div class="luxury-text">QB Agency</div>
+        </section>
 
         <!-- Cards Section -->
         <div class="cards-section">
@@ -843,7 +907,7 @@
                         <li>Google Ads with Precision</li>
                         <li>Luxury Landing Pages & Funnels</li>
                     </ul>
-                    <p style="margin-top: 10px; font-weight: 600; color: #555; font-size: 0.85rem;">Telegram @quicklygrow</p>
+                    <p style="margin-top: 5px; font-weight: 600; color: #555; font-size: 0.75rem;">Telegram @quicklygrow</p>
                 </div>
             </div>
         </div>
@@ -885,10 +949,13 @@
             <div class="card-blob"></div>
             <div class="card-content">
                 <h3>Luxury Brand Marketing</h3>
-                <p>At QB Agency, we specialize in elevating premium brands through strategic marketing that combines exclusivity with measurable results. Our approach focuses on creating aspirational narratives that resonate with discerning audiences.</p>
-                <div class="gradient-line"></div>
-                <p>We transform brands into icons through sophisticated digital experiences, precision-targeted campaigns, and immersive storytelling that captivates the luxury market.</p>
+                <p>We provide premium marketing solutions for elite brands seeking exceptional growth and market dominance.</p>
             </div>
+        </div>
+
+        <!-- Warning Message -->
+        <div class="warning-message">
+            ⚠️ We don't have any WhatsApp. Be aware. Our Telegram: @quicklygrow & backup: @growshal
         </div>
 
         <!-- Branding Card -->
@@ -910,8 +977,8 @@
 
         <!-- Footer -->
         <footer>
-            <p>© 2023 QB Agency. All rights reserved. Luxury Marketing & Advertising Solutions.</p>
-            <p style="margin-top: 8px; font-size: 0.75rem;">We Provide You Luxury Advertising/Marketing</p>
+            <p>© 2025 QB Agency. All rights reserved. Luxury Marketing & Advertising Solutions.</p>
+            <p style="margin-top: 5px; font-size: 0.65rem;">We Provide You Luxury Advertising/Marketing</p>
         </footer>
     </div>
 
@@ -921,7 +988,7 @@
             <div class="card-wrapper">
                 <div class="card-icon">
                     <div class="icon-cart-box">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 576 512">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 576 512">
                             <path fill="#000" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
                         </svg>
                     </div>
@@ -931,7 +998,7 @@
                     <div class="card-title-wrapper">
                         <span class="card-title">Start Your Growth Now</span>
                         <span class="card-action" onclick="closePopup()">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 384 512">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="12" width="12" viewBox="0 0 384 512">
                                 <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
                             </svg>
                         </span>
@@ -952,11 +1019,11 @@
     <!-- Background SVG -->
     <svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" style="position: absolute; width: 100%; height: 100%; z-index: 0; pointer-events: none;">
         <defs>
-            <pattern id="diamondPattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
-                <path d="M40 0 L60 20 L40 40 L20 20 Z" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-                <path d="M0 40 L20 60 L40 40 L20 20 Z" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-                <path d="M40 40 L60 60 L40 80 L20 60 Z" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-                <path d="M80 40 L60 60 L80 80 L100 60 Z" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+            <pattern id="diamondPattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                <path d="M30 0 L45 15 L30 30 L15 15 Z" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+                <path d="M0 30 L15 45 L30 30 L15 15 Z" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+                <path d="M30 30 L45 45 L30 60 L15 45 Z" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+                <path d="M60 30 L45 45 L60 60 L75 45 Z" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
             </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#diamondPattern)"/>
