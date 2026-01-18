@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QB Agency | Luxury Marketing & Advertising</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-image: url('https://tse1.mm.bing.net/th/id/OIP.h9LcbwcuKL_4QPYUBEGt8AHaNN?w=1121&h=2000&rs=1&pid=ImgDetMain&o=7&rm=3');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
+
+        /* Header & Navigation */
+        header {
+            width: 100%;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo .qb {
+            color: #c0c0c0; /* Silver */
+            text-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+        }
+
+        .logo .agency {
+            color: #9370db; /* Purple luxury */
+            text-shadow: 0 0 10px rgba(147, 112, 219, 0.5);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0 40px;
+            text-align: center;
+        }
+
+        /* Profile Display */
+        .profile-display {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 20px 0 30px;
+        }
+
+        .main-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            z-index: 2;
+        }
+
+        .main-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            z-index: 3;
+        }
+
+        .video-circle video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Shine Text */
+        .shine {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.3);
+            background: #222 -webkit-gradient(
+                linear,
+                left top,
+                right top,
+                from(#222),
+                to(#222),
+                color-stop(0.5, #fff)
+            ) 0 0 no-repeat;
+            background-image: -webkit-linear-gradient(
+                -40deg,
+                transparent 0%,
+                transparent 40%,
+                #fff 50%,
+                transparent 60%,
+                transparent 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-background-size: 50px;
+            -webkit-animation: zezzz 5s infinite;
+            background-clip: text;
+            background-size: 50px;
+            animation: zezzz 5s infinite;
+            margin: 20px 0;
+        }
+
+        @-webkit-keyframes zezzz {
+            0%, 10% {
+                background-position: -200px;
+            }
+            20% {
+                background-position: top left;
+            }
+            100% {
+                background-position: 200px;
+            }
+        }
+
+        @keyframes zezzz {
+            0%, 10% {
+                background-position: -200px;
+            }
+            20% {
+                background-position: top left;
+            }
+            100% {
+                background-position: 200px;
+            }
+        }
+
+        /* Cards Section */
+        .cards-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            width: 100%;
+        }
+
+        /* Card Style */
+        .card {
+            position: relative;
+            width: 300px;
+            height: 320px;
+            border-radius: 14px;
+            z-index: 1111;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.3),
+                        -20px -20px 60px rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-bg {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: calc(100% - 10px);
+            height: calc(100% - 10px);
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(24px);
+            border-radius: 10px;
+            overflow: hidden;
+            outline: 2px solid white;
+        }
+
+        .card-blob {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: rgba(8, 8, 8, 0.1);
+            opacity: 1;
+            filter: blur(12px);
+            animation: blob-bounce 5s infinite ease;
+        }
+
+        @keyframes blob-bounce {
+            0% {
+                transform: translate(-100%, -100%) translate3d(0, 0, 0);
+            }
+            25% {
+                transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+            }
+            50% {
+                transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+            }
+            75% {
+                transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+            }
+            100% {
+                transform: translate(-100%, -100%) translate3d(0, 0, 0);
+            }
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 3;
+            color: #333;
+            padding: 15px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .card h3 {
+            color: #222;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .card ul {
+            list-style-type: none;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .card li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .card li::before {
+            content: "✦";
+            margin-right: 10px;
+            color: #9370db;
+            font-weight: bold;
+        }
+
+        /* Gradient Line */
+        .gradient-line {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #9370db, transparent);
+            margin: 30px 0;
+        }
+
+        /* Services Card */
+        .services-card {
+            width: 350px;
+            height: auto;
+            min-height: 200px;
+        }
+
+        /* Branding Card */
+        .branding-card {
+            width: 320px;
+            height: 80px;
+            background: rgba(223, 225, 235, 0.9);
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: inset 0px 56px 40px rgba(34, 34, 34, 0.2),
+                        inset 0px -56px 40px rgba(255, 255, 255, 0.8),
+                        1px 1px 2px rgba(255, 255, 255, 0.8),
+                        -1px -1px 2px rgba(68, 68, 68, 0.2);
+            margin: 30px 0;
+        }
+
+        .branding-content {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 300%;
+            height: 100%;
+            transform: translateX(0%);
+            animation: anim 6s infinite cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .branding-word {
+            width: 33.33%;
+            text-align: center;
+            color: #333;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 3px rgba(68, 68, 68, 0.3);
+        }
+
+        @keyframes anim {
+            0% {
+                transform: translateX(0%);
+            }
+            20% {
+                transform: translateX(0%);
+            }
+            30% {
+                transform: translateX(-33.33%);
+            }
+            70% {
+                transform: translateX(-33.33%);
+            }
+            80% {
+                transform: translateX(-66.66%);
+            }
+            100% {
+                transform: translateX(-66.66%);
+            }
+        }
+
+        /* Buttons Container */
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        /* Button Style */
+        .Btn-container {
+            width: fit-content;
+            height: fit-content;
+            border: none;
+            background-color: rgba(235, 235, 235, 0.9);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(225, 225, 225, 0.5);
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .inner-wrapper {
+            width: fit-content;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(247, 247, 247, 0.95);
+            border-radius: 7px;
+            padding: 8px 15px;
+            box-shadow: 0px 4px 10px rgba(211, 211, 211, 0.5);
+            gap: 20px;
+            transition: 0.5s;
+        }
+
+        .text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .text p {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: rgb(100, 100, 100);
+        }
+
+        .text .pro {
+            background-color: black;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 5px;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(360deg);
+            transition: 0.2s;
+        }
+
+        .icon svg {
+            width: 22px;
+        }
+
+        .Btn-container:active {
+            transform: scale(1);
+        }
+
+        .Btn-container:active .inner-wrapper {
+            transform: scale(0.97);
+        }
+
+        .Btn-container:hover .icon {
+            transform: rotate(0deg);
+        }
+
+        /* Luxury Button */
+        .button-wrap {
+            position: relative;
+            z-index: 2;
+            border-radius: 999vw;
+            background: transparent;
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            margin: 40px 0;
+        }
+
+        .button-shadow {
+            --shadow-cuttoff-fix: 2em;
+            position: absolute;
+            width: calc(100% + var(--shadow-cuttoff-fix));
+            height: calc(100% + var(--shadow-cuttoff-fix));
+            top: calc(0% - var(--shadow-cuttoff-fix) / 2);
+            left: calc(0% - var(--shadow-cuttoff-fix) / 2);
+            filter: blur(clamp(2px, 0.125em, 12px));
+            overflow: visible;
+            pointer-events: none;
+        }
+
+        .button-shadow::after {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            inset: 0;
+            border-radius: 999vw;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+            width: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
+            height: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
+            top: calc(var(--shadow-cuttoff-fix) - 0.5em);
+            left: calc(var(--shadow-cuttoff-fix) - 0.875em);
+            padding: 0.125em;
+            box-sizing: border-box;
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask-composite: exclude;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            overflow: visible;
+            opacity: 1;
+        }
+
+        .luxury-btn {
+            --border-width: clamp(1px, 0.0625em, 4px);
+            all: unset;
+            cursor: pointer;
+            position: relative;
+            pointer-events: auto;
+            z-index: 3;
+            background: linear-gradient(-75deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+            border-radius: 999vw;
+            box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+                        inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+                        0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+                        0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
+                        0 0 0 0 rgba(255, 255, 255, 1);
+            backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .luxury-btn:hover {
+            transform: scale(0.975);
+            backdrop-filter: blur(0.01em);
+            box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+                        inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+                        0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
+                        0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
+                        0 0 0 0 rgba(255, 255, 255, 1);
+        }
+
+        .luxury-btn span {
+            position: relative;
+            display: block;
+            user-select: none;
+            font-family: "Inter", sans-serif;
+            letter-spacing: -0.05em;
+            font-weight: 500;
+            font-size: 1em;
+            color: rgba(50, 50, 50, 1);
+            text-shadow: 0em 0.25em 0.05em rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            padding: 0.875em 1.5em;
+        }
+
+        .luxury-btn:hover span {
+            text-shadow: 0.025em 0.025em 0.025em rgba(0, 0, 0, 0.12);
+        }
+
+        /* Popup Modal */
+        .popup-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-card {
+            width: 360px;
+            max-width: 90%;
+            height: 180px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            animation: popupFadeIn 0.5s ease;
+        }
+
+        @keyframes popupFadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card-icon {
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icon-cart-box {
+            background-color: rgba(26, 26, 26, 0.1);
+            width: 3.5em;
+            height: 3.5em;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-content {
+            width: 80%;
+            padding-left: 15px;
+        }
+
+        .card-title-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            width: 80%;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #1b1b1b;
+        }
+
+        .card-action {
+            width: 20%;
+            text-align: right;
+        }
+
+        .card-action svg {
+            cursor: pointer;
+            fill: rgba(0, 0, 0, 0.4);
+            transition: 0.3s ease-in-out;
+        }
+
+        .card-action svg:hover {
+            fill: rgba(0, 0, 0, 0.8);
+        }
+
+        .product-name {
+            font-size: 0.85em;
+            color: #2c2c2c;
+            margin-bottom: 5px;
+        }
+
+        .product-name:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .product-price {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .popup-button {
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            padding: 0.5rem 1.25rem;
+            background-color: rgb(5, 5, 5);
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffff;
+            gap: 8px;
+            font-weight: bold;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            outline: none;
+            overflow: hidden;
+            font-size: 14px;
+            cursor: pointer;
+            height: 35px;
+        }
+
+        .popup-icon {
+            width: 18px;
+            height: 18px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .popup-button:hover {
+            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .popup-button:hover .popup-icon {
+            transform: translate(4px);
+        }
+
+        .popup-button:hover::before {
+            animation: shine 1.5s ease-out infinite;
+        }
+
+        .popup-button::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100%;
+            background-image: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%);
+            top: 0;
+            left: -100px;
+            opacity: 0.6;
+        }
+
+        @keyframes shine {
+            0% { left: -100px; }
+            60% { left: 100%; }
+            to { left: 100%; }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cards-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .card {
+                width: 90%;
+                max-width: 350px;
+            }
+            
+            .services-card {
+                width: 90%;
+                max-width: 350px;
+            }
+            
+            .buttons-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .shine {
+                font-size: 2rem;
+            }
+            
+            .profile-display {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .main-circle {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .video-circle {
+                width: 90px;
+                height: 90px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .shine {
+                font-size: 1.8rem;
+            }
+            
+            .card {
+                width: 95%;
+                height: auto;
+                min-height: 300px;
+            }
+            
+            .branding-card {
+                width: 95%;
+                height: 70px;
+            }
+            
+            .branding-word {
+                font-size: 1.5rem;
+            }
+            
+            .popup-card {
+                width: 95%;
+                height: auto;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <span class="qb">QB</span> <span class="agency">Agency</span>
+        </div>
+        <div class="nav-placeholder"></div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <!-- Profile Display -->
+            <div class="profile-display">
+                <div class="main-circle">
+                    <img src="https://d1yei2z3i6k35z.cloudfront.net/13184094/696d0df4c0e5c_Gemini_Generated_Image_7vjmc7vjmc7vjmc7.png" alt="QB Agency Main Image">
+                </div>
+                <div class="video-circle">
+                    <video autoplay muted loop>
+                        <source src="https://d1yei2z3i6k35z.cloudfront.net/12037013/68894e0775ab5_Untitledvideo-MadewithClipchamp5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            
+            <!-- Shine Text -->
+            <div class="shine">QB Agency</div>
+        </section>
+
+        <!-- Cards Section -->
+        <div class="cards-section">
+            <!-- First Card -->
+            <div class="card">
+                <div class="card-bg"></div>
+                <div class="card-blob"></div>
+                <div class="card-content">
+                    <h3>Our Services</h3>
+                    <p>We Run All Type Of Ads & We Create Luxury Site's, App + we also Help to grow your Brand/business</p>
+                    <div class="gradient-line"></div>
+                    <ul>
+                        <li>High-Quality Facebook Ads</li>
+                        <li>Google Ads with Precision</li>
+                        <li>Luxury Landing Pages & Funnels</li>
+                    </ul>
+                    <p style="margin-top: 15px; font-weight: 600; color: #555;">Reliable ▸ Qualified ▸ Optimized ▸ 10× Faster</p>
+                </div>
+            </div>
+
+            <!-- Services Card -->
+            <div class="card services-card">
+                <div class="card-bg"></div>
+                <div class="card-blob"></div>
+                <div class="card-content">
+                    <h3>Luxury Brand Marketing</h3>
+                    <p>At QB Agency, we specialize in elevating premium brands through strategic marketing that combines exclusivity with measurable results. Our approach focuses on creating aspirational narratives that resonate with discerning audiences.</p>
+                    <div class="gradient-line"></div>
+                    <p>We transform brands into icons through sophisticated digital experiences, precision-targeted campaigns, and immersive storytelling that captivates the luxury market.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Branding Card -->
+        <div class="branding-card">
+            <div class="branding-content">
+                <div class="branding-word">QB Agency</div>
+                <div class="branding-word">Always King</div>
+                <div class="branding-word">Luxury Marketing</div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons-container">
+            <button class="Btn-container" onclick="window.open('https://t.me/+y9odvJif3No3MjE1', '_blank')">
+                <span class="inner-wrapper">
+                    <span class="text">
+                        <p>JOIN NOW</p>
+                        <p class="pro">QB Agency</p>
+                    </span>
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                            <path fill="currentColor" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9-41.7 196.8c-3.1 14-11.3 17.5-22.9 10.9l-63.3-46.7-30.5 29.4c-3.4 3.4-6.3 6.3-12.9 6.3l4.6-65.1 118.6-107c5.2-4.6-1.1-7.2-8.1-2.6L167.6 285.5l-62.8-19.6c-13.7-4.3-14-13.7 2.9-20.3l245.4-94.6c11.4-4.1 21.3 2.7 17.7 26.9z"/>
+                        </svg>
+                    </span>
+                </span>
+            </button>
+
+            <button class="Btn-container" onclick="window.open('https://t.me/quicklygrow', '_blank')">
+                <span class="inner-wrapper">
+                    <span class="text">
+                        <p>ENQUIRE NOW</p>
+                        <p class="pro">ON Tg</p>
+                    </span>
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                            <path fill="currentColor" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9-41.7 196.8c-3.1 14-11.3 17.5-22.9 10.9l-63.3-46.7-30.5 29.4c-3.4 3.4-6.3 6.3-12.9 6.3l4.6-65.1 118.6-107c5.2-4.6-1.1-7.2-8.1-2.6L167.6 285.5l-62.8-19.6c-13.7-4.3-14-13.7 2.9-20.3l245.4-94.6c11.4-4.1 21.3 2.7 17.7 26.9z"/>
+                        </svg>
+                    </span>
+                </span>
+            </button>
+        </div>
+
+        <!-- Luxury Button -->
+        <div class="button-wrap">
+            <button class="luxury-btn" onclick="window.location.href='/know-more-about-qbagency023'">
+                <span>See/Know More About QB Agency</span>
+            </button>
+            <div class="button-shadow"></div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2023 QB Agency. All rights reserved. Luxury Marketing & Advertising Solutions.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">We Provide You Luxury Advertising/Marketing</p>
+        </footer>
+    </div>
+
+    <!-- Popup Modal -->
+    <div class="popup-modal" id="popupModal">
+        <div class="popup-card">
+            <div class="card-wrapper">
+                <div class="card-icon">
+                    <div class="icon-cart-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 576 512">
+                            <path fill="#000" d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-title-wrapper">
+                        <span class="card-title">Start Your Growth Now</span>
+                        <span class="card-action" onclick="closePopup()">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 384 512">
+                                <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="product-name">Meta Ads Monthly Setup Price</div>
+                    <div class="product-price">₹20,000.00</div>
+                    <button class="popup-button" onclick="window.location.href='/paying-ads-setup-charge021'">
+                        Pay & Active Plan
+                        <svg class="popup-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" style="position: absolute; width: 100%; height: 100%; z-index: 0; pointer-events: none;">
+        <defs>
+            <pattern id="diamondPattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                <path d="M40 0 L60 20 L40 40 L20 20 Z" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                <path d="M0 40 L20 60 L40 40 L20 20 Z" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                <path d="M40 40 L60 60 L40 80 L20 60 Z" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                <path d="M80 40 L60 60 L80 80 L100 60 Z" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+            </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#diamondPattern)"/>
+    </svg>
+
+    <script>
+        // Show popup after 6 seconds
+        setTimeout(function() {
+            document.getElementById('popupModal').style.display = 'flex';
+        }, 6000);
+
+        // Close popup function
+        function closePopup() {
+            document.getElementById('popupModal').style.display = 'none';
+        }
+
+        // Close popup when clicking outside the card
+        document.getElementById('popupModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+
+        // Button interaction enhancements
+        document.querySelectorAll('.Btn-container').forEach(button => {
+            button.addEventListener('mousedown', function() {
+                this.style.transform = 'scale(0.95)';
+            });
+            
+            button.addEventListener('mouseup', function() {
+                this.style.transform = 'scale(1)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
