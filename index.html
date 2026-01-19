@@ -1064,3 +1064,135 @@
     </script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Floating Buttons</title>
+
+<style>
+/* ===== MAIN FLOATING BTN STYLE ===== */
+.container{
+  position:fixed;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:999;
+}
+
+.container .btn{
+  width:250px;
+  height:50px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.container .btn a{
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:rgba(255,255,255,0.05);
+  box-shadow:0 15px 15px rgba(0,0,0,0.3);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:30px;
+  padding:10px;
+  text-decoration:none;
+  letter-spacing:1px;
+  color:#fff;
+  font-weight:600;
+  backdrop-filter:blur(15px);
+  transition:.4s;
+}
+
+.container .btn:hover a{
+  letter-spacing:3px;
+}
+
+.container .btn a::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:50%;
+  height:100%;
+  background:linear-gradient(to left,rgba(255,255,255,.15),transparent);
+  transform:skewX(45deg);
+  transition:.5s;
+}
+
+/* ===== MINI BTN ===== */
+.mini-btn{
+  position:fixed;
+  top:0;
+  right:0;
+  margin:10px;
+  padding:8px 14px;
+  background:#000;
+  color:#fff;
+  font-size:11px;
+  font-weight:700;
+  border-radius:20px;
+  text-decoration:none;
+  z-index:1000;
+  box-shadow:0 8px 20px rgba(0,0,0,.35);
+  transition:opacity .4s, transform .4s;
+}
+
+.mini-btn.hide{
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(-10px);
+}
+</style>
+</head>
+
+<body>
+
+<!-- MINI BUTTON -->
+<a href="/paying-ads-setup-charge021" class="mini-btn" id="miniBtn">
+  START JUST NOW
+</a>
+
+<!-- FLOATING TELEGRAM BUTTON -->
+<div class="container">
+  <div class="btn">
+    <a href="https://t.me/+y9odvJif3No3MjE1" target="_blank">
+      JOIN TELEGRAM
+    </a>
+  </div>
+</div>
+
+<script>
+const miniBtn = document.getElementById("miniBtn");
+
+function cycleMiniBtn(){
+  // show initially
+  miniBtn.classList.remove("hide");
+
+  // hide after 7 sec
+  setTimeout(()=>{
+    miniBtn.classList.add("hide");
+  },7000);
+
+  // show again at 10 sec
+  setTimeout(()=>{
+    miniBtn.classList.remove("hide");
+  },10000);
+}
+
+// initial run
+cycleMiniBtn();
+
+// repeat loop every 10 sec
+setInterval(cycleMiniBtn,10000);
+</script>
+
+</body>
+</html>
+
